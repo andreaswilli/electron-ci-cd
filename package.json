@@ -71,6 +71,7 @@
     "publish": {
       "provider": "github",
       "vPrefixedTagName": true,
+      "overwrite": true,
       "releaseType": "draft"
     }
   }
