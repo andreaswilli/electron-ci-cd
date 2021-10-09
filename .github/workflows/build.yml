@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v1
+
       - name: Delete current release assets
         uses: Kellojo/delete-release-assets-action@v1.9
         with:
