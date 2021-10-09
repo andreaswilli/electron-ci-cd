@@ -1,4 +1,5 @@
 {
+  "name": "electron-ci-cd",
   "version": "0.1.10",
   "description": "A tool to grab metadata for tv shows and rename files on your hard disk.",
   "main": "main.js",
