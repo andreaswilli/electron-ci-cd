@@ -65,6 +65,7 @@
     },
     "linux": {
       "icon": "icons/icon.icns",
+      "target": "AppImage",
       "category": "Utility"
     },
     "publish": {
