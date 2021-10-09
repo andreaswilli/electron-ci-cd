@@ -3,7 +3,7 @@ name: Build/release
 on: push
 
 jobs:
-  cleanUp:
+  deleteReleaseAssets:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,6 +17,7 @@ jobs:
           github-access-token: ${{ secrets.GITHUB_TOKEN }}
 
   release:
+    needs: deleteReleaseAssets
     runs-on: ${{ matrix.os }}
 
     strategy:
