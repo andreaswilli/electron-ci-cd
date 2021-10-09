@@ -10,10 +10,11 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Merge develop -> master
-        run: |
-          git checkout master
-          git merge origin/develop
-          git push
+        uses: devmasx/merge-branch@1.4.0
+        with:
+          type: now
+          target_branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}

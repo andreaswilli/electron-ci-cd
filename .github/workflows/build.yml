@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Delete current release assets
         uses: andreaswilli/delete-release-assets-action@v1.0.0
