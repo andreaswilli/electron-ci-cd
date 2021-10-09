@@ -10,7 +10,7 @@
     "build": "webpack --mode production"
   },
   "homepage": "./",
-  "repository": "https://github.com/andreaswilli/meta-grabber",
+  "repository": "https://github.com/andreaswilli/electron-ci-cd",
   "keywords": [
     "Electron",
     "tv shows",
