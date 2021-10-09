@@ -1,5 +1,4 @@
 {
-  "name": "meta-grabber",
   "version": "0.1.10",
   "description": "A tool to grab metadata for tv shows and rename files on your hard disk.",
   "main": "main.js",
@@ -7,8 +6,7 @@
     "dev": "electron .",
     "serve": "webpack --watch --mode development",
     "format": "prettier --write '**/*.+(js|css)'",
-    "package": "webpack --mode production && electron-builder -mwl",
-    "package-publish": "webpack --mode production && electron-builder -mwl --publish always"
+    "build": "webpack --mode production"
   },
   "homepage": "./",
   "repository": "https://github.com/andreaswilli/meta-grabber",
