@@ -3,6 +3,16 @@ name: Build/release
 on: push
 
 jobs:
+  cleanUp:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete current release assets
+        uses: Kellojo/delete-release-assets-action@v1.9
+        with:
+          delete-only-drafts: true
+          github-access-token: ${{ secrets.GITHUB_TOKEN }}
+
   release:
     runs-on: ${{ matrix.os }}
 
