@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
       - name: Get version number
         uses: gagle/package-version@v1.0.0
         id: package-version
