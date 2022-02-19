@@ -25,6 +25,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: echo ${{ steps.get_release.outputs.id }}
+      - run: echo ${{ steps.get_release.outputs.draft }}
+
     outputs:
       release_id: ${{ steps.get_release.outputs.id }}
       release_is_draft: ${{ steps.get_release.outputs.draft }}
@@ -35,6 +38,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: echo ${{ needs.outputs.release_id }}
+      - run: echo ${{ needs.outputs.release_is_draft }}
       - name: Check out Git repository
         uses: actions/checkout@v2
 
