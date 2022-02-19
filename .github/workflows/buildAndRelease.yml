@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Get version number
         uses: nyaa8/package-version@v1.0.3
+        with:
+          path: package.json
       
       - name: Get release for current version number
         id: get_release
