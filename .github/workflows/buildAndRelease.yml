@@ -11,15 +11,14 @@ jobs:
     
     steps:
       - name: Get version number
-        uses: nyaa8/package-version@v1.0.3
-        with:
-          path: 'package.json'
+        uses: gagle/package-version@v1
+        id: package-version
       
       - name: Get release for current version number
         id: get_release
         uses: joutvhu/get-release@v1.0.1
         with:
-          tag_name: v${{ env.PACKAGE_VERSION }}
+          tag_name: v${{ steps.package-version.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
