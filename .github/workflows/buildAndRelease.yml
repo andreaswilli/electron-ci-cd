@@ -11,7 +11,7 @@ jobs:
     
     steps:
       - name: Get version number
-        uses: gagle/package-version@v1
+        uses: gagle/package-version@v1.0.0
         id: package-version
       
       - name: Get release for current version number
