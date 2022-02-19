@@ -27,7 +27,7 @@ jobs:
 
   deleteReleaseAssets:
     needs: lookForRelease
-    if: ${{ jobs.lookForRelease.outputs.id == null || jobs.lookForRelease.outputs.release_is_draft }}
+    if: ${{ needs.outputs.id == null || needs.outputs.release_is_draft }}
     runs-on: ubuntu-latest
 
     steps:
