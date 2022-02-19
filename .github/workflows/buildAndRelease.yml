@@ -23,7 +23,7 @@ jobs:
 
   deleteReleaseAssets:
   needs: lookForRelease
-    if: steps.get_release.outputs.id == null || steps.get_release.outputs.draft == true
+    if: ${{ steps.get_release.outputs.id == null || steps.get_release.outputs.draft }}
     runs-on: ubuntu-latest
 
     steps:
