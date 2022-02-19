@@ -6,7 +6,24 @@ on:
       - develop
 
 jobs:
+  lookForRelease:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Get version number
+        uses: nyaa8/package-version@v1.0.3
+      
+      - name: Get release for current version number
+        id: get_release
+        uses: joutvhu/get-release@v1.0.1
+        with:
+          tag_name: v${{ env.PACKAGE_VERSION }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   deleteReleaseAssets:
+  needs: lookForRelease
+    if: steps.get_release.outputs.id == null || steps.get_release.outputs.draft == true
     runs-on: ubuntu-latest
 
     steps:
